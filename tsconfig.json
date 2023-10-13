@@ -1,23 +1,17 @@
 {
-  "extends": "astro/tsconfigs/base",
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "strictNullChecks": true,
-    "verbatimModuleSyntax": true,
-
-    "baseUrl": ".",
+    "baseUrl": "src",
+    "jsx": "react-jsx",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@pages/*": ["src/pages/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@util/*": ["src/util/*"],
-      "@cms/*": ["src/cms/*"],
-      "@icons/*": ["src/icons/*"],
-      "@src/*": ["src/*"],
-      "@assets/*": ["src/assets/*"],
-      "@locales/*": ["src/locales/*"]
-    },
-
-    "jsx": "preserve",
-    "types": ["vue3-toastify/global"]
+      "@assets/*": ["assets/*"],
+      "@config": ["config.ts"],
+      "@components/*": ["components/*"],
+      "@content/*": ["content/*"],
+      "@layouts/*": ["layouts/*"],
+      "@pages/*": ["pages/*"],
+      "@styles/*": ["styles/*"],
+      "@utils/*": ["utils/*"]
+    }
   }
 }

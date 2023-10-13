@@ -1,38 +1,65 @@
+function withOpacity(variableName) {
+  return ({ opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return `rgba(var(${variableName}), ${opacityValue})`;
+    }
+    return `rgb(var(${variableName}))`;
+  };
+}
+
 /** @type {import('tailwindcss').Config} */
-const plugin = require("tailwindcss/plugin");
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    extend: {
-      colors: {
-        primary: "rgb(var(--color-primary) / <alpha-value>)",
-        secondary: "rgb(var(--color-secondary) / <alpha-value>)",
-        accent: "rgb(var(--color-accent) / <alpha-value>)",
-        warning: "rgb(var(--color-warning) / <alpha-value>)",
-        danger: "rgb(var(--color-danger) / <alpha-value>)",
-        success: "rgb(var(--color-success) / <alpha-value>)",
-        light: "rgb(var(--color-light) / <alpha-value>)",
-        dark: "rgb(var(--color-dark) / <alpha-value>)",
-        info: "rgb(var(--color-info) / <alpha-value>)",
-      },
-      fontFamily: {
-        sans: ["'Inter Tight Variable'", "Helvetica", "Verdana", "sans-serif"],
-        body: ["'Inter Tight Variable'", "Helvetica", "Verdana", "sans-serif"],
-      },
-      boxShadow: {
-        inset: " inset 2px 2px 40px -20px rgba(0, 0, 0, 0.3)",
-        "inset-s": " inset 2px 2px 30px -10px rgba(0, 0, 0, 0.4)",
-      },
-      screens: {
-        xs: "500px",
+    // Remove the following screen breakpoint or add other breakpoints
+    // if one breakpoint is not enough for you
+    screens: {
+      sm: "640px",
+    },
+
+    // Uncomment the following extend
+    // if existing Tailwind color palette will be used
+
+    // extend: {
+    textColor: {
+      skin: {
+        base: withOpacity("--color-text-base"),
+        accent: withOpacity("--color-accent"),
+        inverted: withOpacity("--color-fill"),
       },
     },
+    backgroundColor: {
+      skin: {
+        fill: withOpacity("--color-fill"),
+        accent: withOpacity("--color-accent"),
+        inverted: withOpacity("--color-text-base"),
+        card: withOpacity("--color-card"),
+        "card-muted": withOpacity("--color-card-muted"),
+      },
+    },
+    outlineColor: {
+      skin: {
+        fill: withOpacity("--color-accent"),
+      },
+    },
+    borderColor: {
+      skin: {
+        line: withOpacity("--color-border"),
+        fill: withOpacity("--color-text-base"),
+        accent: withOpacity("--color-accent"),
+      },
+    },
+    fill: {
+      skin: {
+        base: withOpacity("--color-text-base"),
+        accent: withOpacity("--color-accent"),
+      },
+      transparent: "transparent",
+    },
+    fontFamily: {
+      mono: ["IBM Plex Mono", "monospace"],
+    },
+    // },
   },
-  plugins: [
-    plugin(function ({ addBase }) {
-      addBase({
-        html: { fontSize: "16px" },
-      });
-    }),
-  ],
+  plugins: [require("@tailwindcss/typography")],
 };
