@@ -28,7 +28,7 @@ Frontmatter of AstroPaper 2.0 markdown contents are now type-safe thanks to Astr
 
 All the blog posts were moved from `src/contents` to `src/content/blog` directory.
 
-### New Fetch API
+### New Fetch API to prove it working
 
 Contents are now fetched with `getCollection` function. No relative path to the content needs to be specified anymore.
 
