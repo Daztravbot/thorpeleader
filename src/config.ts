@@ -1,11 +1,11 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://thorpethink.com/", // replace this with your deployed domain
+  website: "https://thorpeleader.com/", // replace this with your deployed domain
   author: "Darren Thorpe",
   desc: "Thorpe has been thinking about it",
-  title: "ThorpeThink",
-  ogImage: "astropaper-og.jpg",
+  title: "Thorpeleader",
+  ogImage: "astsopaper-og.jpg",
   lightAndDarkMode: true,
   postPerPage: 3,
 };
@@ -47,7 +47,7 @@ export const SOCIALS: SocialObjects = [
   {
     name: "Mail",
     href: "mailto:darren.thorpe@gmail.com",
-    linkTitle: `Send an email to ${SITE.title}`,
+    linkTitle: `Send an email to ${SITE.author}`,
     active: true,
   },
   {
