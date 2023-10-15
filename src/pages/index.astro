@@ -75,7 +75,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
             <ul>
               {featuredPosts.map(({ data }) => (
                 <Card
-                  href={`/posts/${slugify(data)}`}
+                  href={`/thoughts/${slugify(data)}`}
                   frontmatter={data}
                   secHeading={false}
                 />
@@ -88,7 +88,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     }
 
     <section id="recent-posts">
-      <h2>Recent Posts</h2>
+      <h2>Recent Thoughts</h2>
       <ul>
         {
           sortedPosts
@@ -97,7 +97,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
               ({ data }, index) =>
                 index < 4 && (
                   <Card
-                    href={`/posts/${slugify(data)}`}
+                    href={`/thoughts/${slugify(data)}`}
                     frontmatter={data}
                     secHeading={false}
                   />
@@ -106,8 +106,8 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         }
       </ul>
       <div class="all-posts-btn-wrapper">
-        <LinkButton href="/posts">
-          All Posts
+        <LinkButton href="/thoughts">
+          All Thoughts
           <svg xmlns="http://www.w3.org/2000/svg"
             ><path
               d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
