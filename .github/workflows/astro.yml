@@ -35,6 +35,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+                      # Add .nojekyll file to supress default behaviour
+      - name: Add .nojekyll
+        run: touch ${{ env.BUILD_PATH }}.nojekyll
       - name: Detect package manager
         id: detect-package-manager
         run: |
@@ -70,9 +73,6 @@ jobs:
             --site "${{ steps.pages.outputs.origin }}" \
             --base "${{ steps.pages.outputs.base_path }}"
         working-directory: ${{ env.BUILD_PATH }}
-      # Add .nojekyll file to supress default behaviour
-      - name: Add .nojekyll
-        run: touch ${{ env.BUILD_PATH }}/dist/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
