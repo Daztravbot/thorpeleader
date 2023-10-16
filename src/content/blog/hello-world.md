@@ -14,3 +14,6 @@ description:
 ### Guess I don't need to say more?
 
 Welcome to the blogs
+
+![DALL·E 2023-10-14 08.55.45 - Illustration depicting a serene morning at the harbour of the Northern Beaches, Australia. Paddlers are seen gliding smoothly on the calm waters, with.png](/assets/images/DALL·E 2023-10-14 08.55.45 - Illustration depicting a serene morning at the harbour of the Northern Beaches, Australia. Paddlers are seen gliding smoothly on the calm waters, with.png)
+
