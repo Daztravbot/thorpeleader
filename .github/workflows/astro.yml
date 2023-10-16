@@ -74,9 +74,6 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           path: ${{ env.BUILD_PATH }}/dist
-      # Add .nojekyll file to supress default behaviour
-      - name: Build
-        run: touch ${{ env.BUILD_PATH }}/dist/.nojekyll
 
   deploy:
     environment:
@@ -86,6 +83,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
+      # Add .nojekyll file to supress default behaviour
+      - name: Add .nojekyll file
+        run: touch ${{ env.BUILD_PATH }}/dist/.nojekyll
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
