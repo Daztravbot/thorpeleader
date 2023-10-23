@@ -23,10 +23,12 @@ Make sure when adding images that the path name does not have spaces so if the f
 ```
 Would be;
 ```
-'![file name alt txt]../../assets/images/file%20name.png'
+'![file name alt txt](../../assets/images/file%20name.png)'
 ```
 
 Easiest to rename files to all lowercase and replace spaces with dashes or underscores.
+
+More info on [astro site](https://astro.build/blog/images/#automatic-markdown--mdx-support)
 
 
 
