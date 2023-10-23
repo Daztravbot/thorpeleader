@@ -15,7 +15,19 @@ description:
 
 Welcome to the blogs
 
-! [Old guy floating] (../assets/images/Illustration of an individual around 40 years old with a rounder head strong arms and curly hair styled in a side part.png)
+![Old guy floating](../../assets/images/glasses-looking-at-ipad.png)
+
+Make sure when adding images that the path name does not have spaces so if the filename has spaces you need to add %20 in the path name e.g.  
+```
+'/src/assets/images/file name.png'
+```
+Would be;
+```
+'![file name alt txt]../../assets/images/file%20name.png'
+```
+
+Easiest to rename files to all lowercase and replace spaces with dashes or underscores.
+
 
 
 
