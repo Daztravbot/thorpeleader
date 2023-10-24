@@ -15,7 +15,12 @@ description:
 
 Welcome to the blogs
 
-![Old guy floating](../../assets/images/glasses-looking-at-ipad.png)
+
+
+<figure>
+  ![Old guy floating](../../assets/images/glasses-looking-at-ipad.png)
+  <figcaption>Old guy floating</figcaption>
+</figure>
 
 Make sure when adding images that the path name does not have spaces so if the filename has spaces you need to add %20 in the path name e.g.  
 ```
